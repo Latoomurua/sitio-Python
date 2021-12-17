@@ -1,4 +1,7 @@
+from os import close
 from django.http import HttpResponse
+from django.template import Template, Context
+from django.template import loader
 import datetime
 
 def saludo(request):
@@ -15,3 +18,16 @@ def diaDeHoy(request):
 
 def apellido(request, ape):
     return HttpResponse(f"El mejor programador se llama {ape}!!")
+
+def probandoTemplate(request):
+
+    mejorProgramador = "Lautaro Murua"
+    lenguaje = "Python"
+    frameworksPython = ["flask", "Pyramid", "Django", "Web2py"]
+
+    diccionario = {"nombre":mejorProgramador,"lenguaje":lenguaje, "frameworks": frameworksPython}
+
+    plantilla = loader.get_template("template1.html")
+    documento = plantilla.render(diccionario)
+
+    return HttpResponse(documento)

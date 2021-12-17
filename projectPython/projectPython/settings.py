@@ -54,7 +54,7 @@ ROOT_URLCONF = 'projectPython.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ["C:/Users/latom/OneDrive/Escritorio/Repositorios/sitio-Python/projectPython/projectPython/plantillas/"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
